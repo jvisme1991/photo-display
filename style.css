@@ -3,7 +3,8 @@
   --clr-primary__white: hsl(0, 0%, 100%);
   --clr-primary__gray: hsl(0, 0%, 20%);
 
-  --clr-secondary__off-white: hsl(40, 20%, 95%);
+  --clr-secondary__off-white: hsla(0, 0%, 82%, 0.28);
+  --clr-secondary__white_opac: rgba(255, 255, 255, 0.9);
 
   --fs-300: 0.875rem;
   --fs-400: 1rem /* 16rem */;
@@ -90,6 +91,7 @@ h6 {
 body {
   padding-top: 2.75rem;
   font-family: var(--ff-body);
+  color: var(--clr-primary__gray);
 }
 
 h1,
@@ -164,10 +166,11 @@ li {
 }
 
 .social-icons__icon {
-  width: 14px;
-  display: flex;
+  width: auto;
+  height: 14px;
+  /* display: flex;
   stroke: var(--clr-secondary__off-white);
-  fill: var(--clr-secondary__off-white);
+  fill: var(--clr-secondary__off-white); */
 }
 
 .icon__circle {
@@ -198,7 +201,7 @@ li {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   color: #fff;
-  background-color: hsl(210, 45%, 30%);
+  background-color: var(--clr-primary_navy);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -257,6 +260,9 @@ li {
   align-items: center;
 }
 /* header bottom */
+.nav-bar__bottom {
+  padding: 3rem 0;
+}
 .logo__img {
   width: clamp(7rem, 15vw, 9rem);
 }
@@ -266,18 +272,14 @@ li {
   align-items: center;
 }
 
-/* header .wrapper__wide {
-  background: var(--clr-primary__white);
-} */
-
 nav ul {
   list-style: none;
   color: var(--clr-primary__gray);
 }
 nav li a {
-  font-size: var(--fs-500);
+  font-size: clamp(var(--fs-300), 3vw, var(--fs-500));
   font-weight: var(--fw-500);
-  color: var(--clr-primary__gray);
+  color: var(--clr-primary__navy);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -293,7 +295,7 @@ nav li a {
   height: clamp(2em, 11.25vw, 3em);
   padding: 0em;
   border-radius: 50%;
-  background: #072a2d;
+  background: var(--clr-primary_navy);
   color: white;
   transition: opacity 250ms ease;
 
@@ -361,6 +363,7 @@ nav li a {
   margin: 0;
   padding: 0;
   position: relative;
+  background-color: var(--clr-secondary__white_opac);
 }
 
 .nav__item {
@@ -374,32 +377,36 @@ nav li a:focus {
 /* end header */
 
 /* hero video section */
-.hero {
-  height: 70vh;
-  background-color: bisque;
+.hero__intro {
+  padding: 3rem 0;
 }
 
+.hero__intro .text-decoration {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-700);
+  color: var(--clr-primary_navy);
+}
 .hero-video {
+  width: 100%;
+  height: auto;
+  padding-top: 56.25%;
+  margin-inline: auto;
   position: relative;
-  height: 100vh; /* or a specific height */
-  overflow: hidden;
+  margin-bottom: 3rem;
 }
 
 .video-background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 100%;
   height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  max-width: none;
-  max-height: none;
-  transform: translate(-50%, -50%);
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+
   z-index: 1;
 }
 
-.hero__content h1 {
+*/ .hero__text h1 {
   padding-top: 4rem;
 }
 
@@ -410,8 +417,19 @@ nav li a:focus {
   color: white; /* Change as needed */
 }
 
+.hero__content__btm {
+  background-color: var(--clr-secondary__off-white);
+  padding: 3rem 0;
+}
+
 .hero__content__btm p {
-  width: 75%;
+  width: 90%;
+  margin-inline: auto;
+}
+
+.hero__content__btm__button {
+  text-align: center;
+  margin-top: 1rem;
 }
 /* end hero video section */
 
@@ -452,8 +470,9 @@ h3 {
   padding: 2rem 0;
 }
 
-.services p {
-  text-align: justify;
+.services p,
+li {
+  text-align: left;
   width: 90%;
   margin: auto;
   margin-bottom: 1rem;
@@ -494,6 +513,8 @@ h3 {
 }
 /* end services */
 
+/* gap */
+
 /* service packages */
 .service-packages {
   margin: 5rem auto;
@@ -508,15 +529,21 @@ h2 {
   padding: 1rem 0;
 }
 
-.service-packages__text p {
-  text-align: justify;
-}
 .service-packages h2 {
   padding: 1rem;
 }
 
 .service-list__card {
   background-color: var(--clr-secondary__off-white);
+  border-radius: 1rem;
+}
+
+.service-list__card__text {
+  text-align: left;
+}
+
+.service-list__card__text li {
+  margin-right: 1rem;
 }
 
 .service-list {
@@ -538,18 +565,6 @@ h2 {
 
 .list-details .list__sub li {
   font-weight: var(--fw-400);
-}
-
-.service-list__card {
-  justify-content: space-between;
-}
-
-.service-list__card__text {
-  text-align: justify;
-}
-
-.service-list__card__text li {
-  max-width: 45%;
 }
 
 .service-list__card__image {
@@ -580,8 +595,12 @@ footer {
 
   .nav-bar__bottom {
     width: 100%;
-    padding: 0 2rem;
+    padding-inline: clamp(2rem, 10vw, 3.5rem);
     margin-inline: auto;
+  }
+
+  .nav-toggle {
+    right: clamp(2rem, 10vw, 3.5rem);
   }
   .contact-info {
     display: block;
@@ -590,6 +609,10 @@ footer {
 
   .social-icons {
     display: none;
+  }
+
+  .video-background {
+    border: 5px solid pink;
   }
 }
 
@@ -602,9 +625,9 @@ footer {
     display: flex;
   }
 
-  .service-list__card__description {
+  /* .service-list__card__description {
     width: 50%;
-  }
+  } */
 
   .btn {
     text-align: left;
