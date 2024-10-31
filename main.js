@@ -10,9 +10,11 @@ navToggle.addEventListener('click', () => {
 
 document.addEventListener( 'DOMContentLoaded', function () {
   new Splide( '#image-carousel', {
-    perPage: 2,
+    perPage: 3,
     type: 'loop',
-    focus: 'center',
+    focus: 0,
+    omitEnd: true,
+    play: true,
     breakpoints: {
       640: {
         perPage: 1,
@@ -22,11 +24,11 @@ document.addEventListener( 'DOMContentLoaded', function () {
 ).mount();
 } );
 
-var splide = new Splide( '.splide', {
-  type   : 'loop',
-  perPage: 3,
-  focus  : 'center',
-} );
+// var splide = new Splide( '.splide', {
+//   type   : 'loop',
+//   perPage: 3,
+//   focus  : 'center',
+// } );
 
-splide.mount();
+// splide.mount();
 
