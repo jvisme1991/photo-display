@@ -4,7 +4,7 @@
   --clr-primary__gray: hsl(0, 0%, 20%);
 
   --clr-secondary__off-white: hsla(0, 0%, 82%, 0.28);
-  --clr-secondary__white_opac: rgba(255, 255, 255, 0.9);
+  --clr-secondary__white_opac: rgba(255, 255, 255, 0.8);
 
   --fs-300: 0.875rem;
   --fs-400: 1rem /* 16rem */;
@@ -152,9 +152,12 @@ li {
   display: flex;
 }
 
+/* .row {
+  flex-direction: column;
+} */
+
 .grid {
   display: grid;
-  grid-template-rows: 2;
 }
 
 .center {
@@ -163,6 +166,11 @@ li {
 
 .inline-flex {
   display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+.block {
+  display: block;
 }
 
 .social-icons__icon {
@@ -209,6 +217,17 @@ li {
   transition: background 0.3s ease;
 }
 
+.light-btn {
+  color: var(--clr-primary_navy);
+  background-color: var(--clr-primary__white);
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
 .hidden {
   display: none;
 }
@@ -220,6 +239,10 @@ li {
 
 .cta-button:hover {
   background-color: hsl(210, 45%, 25%);
+}
+
+.light-btn:hover {
+  background-color: var(--clr-secondary__white_opac);
 }
 
 .list__main {
@@ -235,7 +258,7 @@ li {
   position: fixed;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   top: 0;
   margin: auto;
   overflow: hidden;
@@ -249,13 +272,20 @@ li {
 }
 
 .contact-info {
-  width: 100%;
+  margin-inline: auto;
+  border: 1px solid red;
+}
+
+.contact-info__address {
+  justify-content: center;
+  align-items: center;
+  place-content: center;
+
   border: 1px solid red;
 }
 
 .contact-info a {
-  margin-right: 1rem;
-  color: var(--clr-secondary__off-white);
+  color: var(--clr-primary__white);
   font-weight: var(--fw-500);
   flex-wrap: nowrap;
 }
@@ -597,10 +627,145 @@ h2 {
 }
 /* end service packages */
 
+/* contact section */
+.contact-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  padding: 10px;
+  border: none;
+  background-color: #0073e6;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #005bb5;
+}
+/* end contact section */
+
+/* about us */
+.about-us {
+  margin: 5rem 0;
+}
+
+.about-us .about-us__btn {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  margin-inline: auto;
+}
+/* end about us */
+
 /* footer */
 footer {
-  margin-bottom: 10rem;
+  background-color: var(--clr-primary_navy);
+  color: var(--clr-primary__white);
 }
+
+.footer-social {
+  text-align: center;
+}
+
+footer .grid {
+  gap: 1.5rem;
+}
+
+.footer-social__icons {
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+
+footer .contact-info {
+  align-items: center;
+  justify-content: center;
+  place-content: center;
+  place-items: center;
+  width: 85%;
+  margin-inline: auto;
+}
+
+/* .quick-links {
+  justify-content: center;
+} */
+
+.quick-links__list {
+  list-style-type: none;
+  text-transform: uppercase;
+  padding-inline: clamp(0.5rem, 3vw, 1.5rem);
+  margin: 0;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.quick-links__list li {
+  text-align: center;
+  width: auto;
+}
+
+/* bottom footer */
+.footer-legal__links {
+  margin-inline: auto;
+}
+
+.footer-legal__links a {
+  text-decoration: none;
+  color: var(--clr-primary__white);
+  text-transform: capitalize;
+}
+
+.footer-legal__links a + a::before {
+  content: "|";
+  margin: 0 8px;
+}
+
+.footer-legal {
+  padding: 1rem 0;
+}
+
+.website-designer {
+  margin-inline: auto;
+}
+
+.footer-legal__copyright {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
 /* end footer */
 
 @media (max-width: 730px) {
@@ -616,10 +781,6 @@ footer {
 
   .nav-toggle {
     right: clamp(2rem, 10vw, 3.5rem);
-  }
-  .contact-info {
-    display: block;
-    margin: auto;
   }
 
   .social-icons {
