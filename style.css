@@ -152,9 +152,15 @@ li {
   display: flex;
 }
 
-/* .row {
+.column {
   flex-direction: column;
-} */
+}
+
+.row {
+  min-width: -webkit-fill-available;
+  min-width: fit-content;
+  white-space: nowrap;
+}
 
 .grid {
   display: grid;
@@ -166,7 +172,6 @@ li {
 
 .inline-flex {
   display: inline-flex;
-  flex-wrap: nowrap;
 }
 
 .block {
@@ -273,15 +278,12 @@ li {
 
 .contact-info {
   margin-inline: auto;
-  border: 1px solid red;
 }
 
 .contact-info__address {
   justify-content: center;
   align-items: center;
   place-content: center;
-
-  border: 1px solid red;
 }
 
 .contact-info a {
