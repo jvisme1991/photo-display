@@ -15,10 +15,16 @@ document.addEventListener( 'DOMContentLoaded', function () {
     focus: 0,
     omitEnd: true,
     play: true,
+    paginationDirection: 'ttb',
+    pagination: false,
+    arrows: false,
+    autoplay: true,
+    interval: 4500,
+    pauseonHover: true,
+    pauseOnFocus: true,
     breakpoints: {
-      640: {
-        perPage: 1,
-      }
+      1020: {perPage: 2},
+      590: {perPage: 1},
     }
   } 
 ).mount();
