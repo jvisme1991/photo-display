@@ -44,7 +44,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               </div>
               <div class="row">
                 <span class="inline-flex"
-                ><a href="tel:9035742424" id="contact" class="flex"
+                ><a href="tel:9035742424" id="contact__phone" class="flex"
                   ><svg
                     class="social-icons__icon icon__square contact"
                     xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +153,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <a href="#drone-services">Drone Services</a>
               </li>
               <li class="nav__item"><a href="#contact">Contact</a></li>
-              <li class="nav__item"><a href="#why-us">Why Us</a></li>
+              <li class="nav__item"><a href="#about-us">Why Us</a></li>
             </ul>
           </nav>
         </div>
@@ -165,7 +165,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       <!-- video link -->
       <div class="hero__intro container">
         <h1>Elevate Your Listings with Stunning Aerial Perspectives</h1>
-        <p class="text-decoration">///////</p>
+        <p class="text-decoration">////////////////////</p>
       </div>
       <div class="hero-video container flex">
         <iframe
@@ -192,7 +192,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           </p>
         </div>
         <div class="hero__content__btm__button">
-          <a href="#"
+          <a href="#drone-services"
             ><button type="button" class="cta-button">Learn More</button></a
           >
         </div>
@@ -201,7 +201,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <!-- end hero section -->
 
     <!-- photo gallery -->
-    <section class="photo-gallery wrapper">
+    <section id="gallery" class="photo-gallery wrapper">
       <div class="image-carousel__text">
         <h2 class="photo-gallery__title">Explore Our Aerial Portfolio</h2>
         <p class="intro-text">
@@ -239,7 +239,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <!-- end photo gallery -->
 
     <!-- services -->
-    <section class="services">
+    <section id="drone-services" class="services">
       <h2>Our Services</h2>
       <div class="services-grid">
         <div class="service-card">
@@ -396,7 +396,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <!-- end services -->
 
     <!-- service packages -->
-    <section class="service-packages container">
+    <section id="service-package" class="service-packages container">
       <div class="service-packages__text">
         <h1>Photography Packages</h1>
         <p>
@@ -541,7 +541,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <!-- end service packages -->
 
     <!-- contact section -->
-    <section class="contact-section">
+    <section id="contact" class="contact-section">
       <h2>Sign Up for a Service Package</h2>
       <form action="https://contact-form-server-nu.vercel.app/api/submit-form" method="POST" class="contact-form">
           <label for="name">Full Name</label>
@@ -560,6 +560,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               <option value="standard">Standard Package</option>
               <option value="combo">Combo Package</option>
               <option value="premium">Premium Package</option>
+              <option value="more-info">More Information</option>
           </select>
   
           <label for="message">Additional Details</label>
@@ -571,7 +572,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <!-- end contact section -->
 
     <!-- about us -->
-    <section class="about-us">
+    <section id="about-us" class="about-us">
       <div class="footer-contact">
         <div class="about-us__text container__narrow">
           <h2>about us</h2>
@@ -587,7 +588,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             Adobe Lightroom and DaVinci Resolve, allowing us to provide beautifully edited
             visuals that truly stand out.
         </p>
-          <a href="#" class="about-us__btn flex" rel="noopener">
+          <a href="#contact" class="about-us__btn flex" rel="noopener">
             <button class="cta-button" type="button">Contact Us</button>
           </a>
         </div>
@@ -595,8 +596,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     <!-- end about us -->
 
     <!-- main footer section -->
-    <footer id="main-footer grid">
-        <div class="grid">
+    <footer id="main-footer">
+        <div class="footer__hero grid">
+
           <div class="footer-social">
             <div class="footer__logo">
               <img src="/img/logo2.jpg" alt="company logo" class="footer__logo__img">
@@ -673,24 +675,24 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               </div>
             </div>
             <div class="footer__cta-btn">
-              <button type="button" class="light-btn">Get Started</button>
+              <button type="button" class="light-btn cta-button">Get Started</button>
             </div>
           </div>
 
-          <div class="contact-info contact-info__address grid">
-            <p>Office: <span><a href="http://tel:9035742424">(903)574-2424</a></span></p>
-            <p>email: <span><a href="mailto:jsverhey@hotmail.com">jsverhey@hotmail.com</a></span></p>
-            <p>address: <span><a href="https://maps.app.goo.gl/guvPpNECDhXHEuEq9">18751 Paradise Ln, Flint, TX 75762</a></span></p>
+          <div class="contact-info contact-info__address flex">
+            <div class="grid__column"><p>Office: <span><a href="http://tel:9035742424">(903)574-2424</a></span></p></div>
+            <div class="grid__column"><p>Email: <span><a href="mailto:jsverhey@hotmail.com">jsverhey@hotmail.com</a></span></p></div>
+            <div class="grid__column"><p>Address: <span><a href="https://maps.app.goo.gl/Sy8biUsHVSzdUDnQ6">18753 Paradise Ln, Flint, TX 75762</a></span></p></div>
           </div>
 
           <div class="quick-links">
             <ul class="quick-links__list flex">
-              <li>home</li>
-              <li>portfolio</li>
-              <li>services</li>
-              <li>about</li>
-              <li>contact us</li>
-              <li>Reviews</li>
+              <li><a href="#">home</a></li>
+              <li><a href="#gallery">portfolio</a></li>
+              <li><a href="#drone-services">services</a></li>
+              <li><a href="#about-us">about</a></li>
+              <li><a href="#contact">contact us</a></li>
+              <li><a href="#">Reviews</a></li>
             </ul>
           </div>
           
@@ -718,7 +720,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       </div>
     </footer>
     <!-- end main footer -->
-     
+
     <script src="main.js"></script>
     <script src="
 https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
