@@ -19,7 +19,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
     pagination: false,
     arrows: false,
     autoplay: true,
-    interval: 4500,
+    interval: 4000,
     pauseonHover: true,
     pauseOnFocus: true,
     breakpoints: {
@@ -35,30 +35,6 @@ document.querySelectorAll('.cta-button').forEach(button => {
       document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
   });
 });
-
-
-// Function to detect if the device is a touch device
-// function isTouchDevice() {
-//   return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-// }
-
-// if (isTouchDevice()) {
-//   // Only apply the observer if the device is a touch device
-//   const observer = new IntersectionObserver(entries => {
-//       entries.forEach(entry => {
-//           if (entry.isIntersecting) {
-//               entry.target.classList.add('scale-up');
-//           } else {
-//               entry.target.classList.remove('scale-up');
-//           }
-//       });
-//       {threshold: 0.85} //trigger scaling when 75% card is visible
-//   });
-
-//   document.querySelectorAll('.service-card').forEach(card => {
-//       observer.observe(card);
-//   });
-// }
 
 
 // Function to detect if the device is a touch device
