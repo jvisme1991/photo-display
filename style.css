@@ -294,10 +294,6 @@ section::before {
   align-items: center;
 }
 
-.contact-info {
-  margin-inline: auto;
-}
-
 .contact-info__address {
   justify-content: center;
   align-items: center;
@@ -787,6 +783,7 @@ footer {
 
 /* end footer */
 
+/* Media queries */
 @media (max-width: 749px) {
   body {
     padding-top: 3.5rem;
@@ -794,6 +791,10 @@ footer {
 
   .scale-up {
     transform: scale(1.05);
+  }
+
+  .header-top {
+    justify-content: space-evenly;
   }
 
   .nav-bar__bottom {
